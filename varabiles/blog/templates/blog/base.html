@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1 Template Basic</title>
+</head>
+<body>
+
+    {% comment %}
+    MultiLine comment
+    {% endcomment %}
+
+    {# This is single line comment #}
+
+    {% comment %}
+    Single Variable
+    {% endcomment %}
+
+    <p>Name: {{ name }}</p>
+    <p>Age: {{ age }}</p>
+    <!-- list acces -->
+     <p>First Skills {{skill.0}}</p>
+      <!-- object attribute -->
+    <p>User age:{{user.age}}</p>
+      <!-- dictionaries -->
+      <h2>Blog Information</h2>
+      <p>Title: {{blog.title}}</p>
+      <p>Create At: {{blog.created_at}}</p>
+      <p>Content:{{blog.content}}</p>
+      <p>Content:{{blog.content | safe }}</p>
+      <!-- empty values -->
+       <p>Default empty value: {{empty_value|default:"No values provided"}}</p>
+       <p>Default empty value: {{empty_value|defaul_if_none:"No data"}}</p>
+</body>
+</body>
+</html>
