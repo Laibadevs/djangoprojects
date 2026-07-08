@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd template filters</title>
+</head>
+<body>
+    <!-- 2nd template -->
+        <!-- text filter page -->
+          {% comment %} Text filters{% endcomment %}
+          <p><b>Title(Normal):</b>{{post.title}}</p>
+          <p><b>Upper Case:</b>{{post.title|upper}}</p>
+          <p><b>lower Case:</b>{{post.title|lower}}</p>
+          <p><b>Capital Case:</b> {{ post.title|capfirst }}</p>
+          <p><b>Title Case:</b> {{ post.title|title}}</p>
+          <p><b>Traccate Char:</b> {{ post.title|truncatechars:15 }}</p>
+          <p><b>Traccate word:</b> {{ post.title|truncatewords:2 }}</p>
+          <p><b>Line Brack:</b> {{ post.title|linebreaks }}</p>
+          <hr>
+           <!-- number filter page -->
+          <p><b>Original Price:</b> {{ post.price }}</p>
+</body>
+</html>

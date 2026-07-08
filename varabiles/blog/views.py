@@ -24,3 +24,15 @@ def home (request):
         
         }
         return render(request, "blog/base.html", context)
+def blog_details(request):
+    post={
+        "title":"My second template",
+        "description":"Dango is a high level language",
+        "author":None,
+        "created_at":datetime(2026,7,8,6,40),
+        "comments_count":5,
+        "tags":["Django","php","jquery"],
+        "price":100,
+        "number":7
+    }
+    return render(request,"blog/filters.html",{"post":post} )

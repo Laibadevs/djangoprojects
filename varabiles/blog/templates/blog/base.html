@@ -29,9 +29,11 @@
       <p>Create At: {{blog.created_at}}</p>
       <p>Content:{{blog.content}}</p>
       <p>Content:{{blog.content | safe }}</p>
+      <p>Content:{{blog.author.name}}</p>
       <!-- empty values -->
        <p>Default empty value: {{empty_value|default:"No values provided"}}</p>
-       <p>Default empty value: {{empty_value|defaul_if_none:"No data"}}</p>
+
+       
 </body>
 </body>
 </html>
