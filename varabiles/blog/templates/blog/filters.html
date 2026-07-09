@@ -20,5 +20,12 @@
           <hr>
            <!-- number filter page -->
           <p><b>Original Price:</b> {{ post.price }}</p>
-</body>
+          <p><b>Original Price (+5):</b> {{ post.price|add:5}}</p>
+                    <!-- Divison by -->
+          {% if post.number|divisibleby:2 %}
+          <p>{{ post.number }} is divisible by 2</p>
+          {% else %}
+          <p>{{ post.number }} is not divisible by 2</p>
+          {% endif %}
+</body>   
 </html>
