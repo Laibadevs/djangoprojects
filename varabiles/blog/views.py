@@ -36,3 +36,24 @@ def blog_details(request):
         "number":7
     }
     return render(request,"blog/filters.html",{"post":post} )
+def  about_details(request):
+    blogs=[
+        {"title":"Django basics",
+        "is_featured":True,
+        "author":"John Doe"
+        },
+         {"title":"Django advance",
+        "is_featured":False,
+        "author":""
+        },
+         {"title":"Django Rest Famewwork",
+        "is_featured":False,
+        "author":"Jane"
+        }
+    ]
+    context={
+        "blogs":blogs,
+        "today":datetime.now(),
+        "html_code":"<h1>Weclome to My blog</h1>",
+    }
+    return render(request,"blog/conditions.html",context )

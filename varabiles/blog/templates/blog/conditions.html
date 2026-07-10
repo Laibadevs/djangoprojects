@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#3 Template</title>
+  </head>
+  <body>
+    <h1>Blog List</h1>
+    {% if blogs.1.is_featured%}
+    <h2>Featured blog:{{blogs.1.title}}</h2>
+    {%else%}
+    <h2>No feature blog:{{blogs.1.title}}</h2>
+    {% endif%}
+    <!-- for loop -->
+    <ul>
+      {% for blog in blogs%}
+      <li>{{forloop.counter}}. {{blog.title}} - {{blog.author}}</li>
+      {% empty%}
+      <li>No blogs available</li>
+      {% endfor%}
+    </ul>
+    <!-- with -->
+    {% with total_blogs=blogs|length %}
+    <p>Total blogs:{{total_blogs}}</p>
+    {%endwith%}
+    <!-- Cycle -->
+    <hr />
+    <h2>Blogs in table</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+      {%for blog in blogs%}
+      <tr
+        style="background-color: {% cycle 'lightblue' 'lightgreen' 'lightyellow' %};"
+      >
+        <td>{{forloop.counter}}</td>
+        <td>{{blog.title}}</td>
+        <td>{{blog.author}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    <!-- firstof -->
+    <p>Author: {% firstof blog.1.author "Anonymous" %}</p>
+    <!-- varbatim -->
+    {% verbatim %}
+    <p>Author:{{blog.1.author}}</p>
+    {% endverbatim %}
+    <!-- autoescape -->
+    <h2>Autoescape example</h2>
+    <p>default(Safe Escape):{{html_code}}</p>
+  </body>
+</html>
